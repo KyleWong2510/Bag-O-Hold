@@ -21,6 +21,15 @@ const SignUpForm = () => {
       return true
     } else return false
   }
+
+  const matchPasswords = () => {
+    passwordInput !== confirmedPasswordInput && 
+      <p>*** Your passwords do not match ***</p>
+  }
+
+  const matchUsernames = () => {
+    //if username is already taken alert like above
+  }
   
   const postSignUp = () => {
     const url = ''
@@ -110,6 +119,9 @@ const SignUpForm = () => {
         >
           Sign Up!
         </button>
+        <section className='form-error'>
+          {matchPasswords()}
+        </section>
       </form>
     </>
   )
