@@ -11,14 +11,13 @@
   width: 35vw;
 }
 
-#username-input-container,
-#password-input-container {
+.sign-in-form-fields {
   align-items: center;
   display: flex;
   flex-direction: row;
   height: 2em;
   justify-content: space-between;
-  width: 50%;
+  width: 67%;
 
   label {
     text-align: right;
@@ -33,6 +32,6 @@
 }
 
 #login-btn {
-  height: 15%;
-  width: 15%;
+  height: 3em;
+  width: 6em;
 }

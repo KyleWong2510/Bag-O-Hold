@@ -28,63 +28,69 @@ const SignUpForm = () => {
 
   return (
     <>
-      <form>
+      <form id='sign-up-form'>
         <h1>Sign Up</h1>
-        <section>
-          <label>First Name:</label>
+        <section className='sign-up-form-fields'>
+          <label htmlFor='firstNameInput'>First Name:</label>
           <input 
+            id='firstNameInput'
             type='text'
             placeholder='First Name...'
             value={firstNameInput}
             onChange={(e) => setFirstName(e.target.value)}
           />
         </section>
-        <section>
-          <label>Last Name:</label>
+        <section className='sign-up-form-fields'>
+          <label htmlFor='lastNameInput'>Last Name:</label>
           <input 
+            id='lastNameInput'
             type='text'
             placeholder='Last Name...'
             value={lastNameInput}
             onChange={(e) => setLastName(e.target.value)}
           />
         </section>
-        <section>
-          <label>Email:</label>
+        <section className='sign-up-form-fields'>
+          <label htmlFor='emailInput'>Email:</label>
           <input 
+            id='emailInput'
             type='text'
             placeholder='Email Address...'
             value={emailInput}
             onChange={(e) => setEmail(e.target.value)}
           />
         </section>
-        <section>
-          <label>Username:</label>
+        <section className='sign-up-form-fields'>
+          <label htmlFor='newUsernameInput'>Username:</label>
           <input 
+            id='newUsernameInput'
             type='text'
             placeholder='Username...'
             value={usernameInput}
             onChange={(e) => setUsername(e.target.value)}
           />
         </section>
-        <section>
-          <label>Password:</label>
+        <section className='sign-up-form-fields'>
+          <label htmlFor='newPasswordInput'>Password:</label>
           <input 
+            id='newPasswordInput'
             type='password'
             placeholder='Password...'
             value={passwordInput}
             onChange={(e) => setPassword(e.target.value)}
           />
         </section>
-        <section>
-          <label>Confirm Password:</label>
+        <section className='sign-up-form-fields'>
+          <label htmlFor='newConfirmedPasswordInput'>Confirm Password:</label>
           <input 
+            id='newConfirmedPasswordInput'
             type='password'
             placeholder='Confirm Password...'
             value={confirmedPasswordInput}
             onChange={(e) => setConfirmedPassoword(e.target.value)}
           />
         </section>
-        <button onClick={postSignUp}>Sign Up!</button>
+        <button id='sign-up-btn' onClick={postSignUp}>Sign Up!</button>
       </form>
     </>
   )
