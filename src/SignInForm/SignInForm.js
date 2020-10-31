@@ -23,7 +23,7 @@ const SignInForm = () => {
     <>
       <form id='sign-in-form'>
         <h1>Login</h1>
-        <section id='username-input-container'>
+        <section className='sign-in-form-fields'>
           <label htmlFor='usernameInput'>Username:</label>
           <input 
             id='usernameInput'
@@ -33,7 +33,7 @@ const SignInForm = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </section>
-        <section id='password-input-container'>
+        <section className='sign-in-form-fields'>
           <label htmlFor='passwordInput'>Password:</label>
           <input id='passwordInput'
             type='password'

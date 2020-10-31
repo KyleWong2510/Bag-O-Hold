@@ -1,17 +1,17 @@
-#sign-in-form {
+#sign-up-form {
   align-items: center;
   align-self: center;
   box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
-  height: 45vh;
+  height: 65vh;
   justify-content: space-between;
   justify-self: center;
-  padding: 5em 0em;
+  padding: 5em 0em 0em;
   width: 35vw;
 }
 
-.sign-in-form-fields {
+.sign-up-form-fields {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -31,7 +31,14 @@
   }
 }
 
-#login-btn {
+#sign-up-btn {
   height: 3em;
   width: 6em;
+}
+
+// Form Errors, maybe move to partial to share with other forms?
+
+.form-error {
+  color: red;
+  height: 5em;
 }
