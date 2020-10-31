@@ -1,22 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './CreateCharacterForm.scss'
 
-class CreateCharacterForm extends React.Component {
-  constructor() {
-    super(); 
-    this.state = {
-      characterName: '',
-      characterClass: '',
-      characterBio: ''
-    }
-  }
+const CreateCharacterForm = () => {
+  const [characterName, setCharacterName] = useState('')
+  const [characterClass, setCharacterClass] = useState('')
+  const [characterRace, setCharacterRace] = useState('')
+  const [characterBackground, setCharacterBackground] = useState('')
+  const [characterBio, setCharacterBio] = useState('')
 
-  handleChange(e) {
-    const { name, value } = e.target
-    this.setState({ [name] : value })
-  }
-
-  renderClassSelect() {
+  const renderClassSelect = () => {
     return (
       <select
         name='characterClass'
@@ -28,27 +20,25 @@ class CreateCharacterForm extends React.Component {
     )
   }
 
-  render() {
-    return (
-      <form>
-        <input 
-          type='text'
-          name='characterName'
-          placeholder='Character Name...'
-          value={this.state.name}
-          onChange={(e) => this.handleChange(e)}
-        />
-        <input 
-          type='text'
-          name='characterBio'
-          placeholder='Character Bio...'
-          value={this.state.name}
-          onChange={(e) => this.handleChange(e)}
-        />
+  return (
+    <form>
+      <input 
+        type='text'
+        name='characterName'
+        placeholder='Character Name...'
+        value={this.state.name}
+        onChange={(e) => this.handleChange(e)}
+      />
+      <input 
+        type='text'
+        name='characterBio'
+        placeholder='Character Bio...'
+        value={this.state.name}
+        onChange={(e) => this.handleChange(e)}
+      />
 
-      </form>
-    )
-  }
+    </form>
+  )
 }
 
 export default CreateCharacterForm
