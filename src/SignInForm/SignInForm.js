@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import './SignInForm.scss'
 
 const SignInForm = () => {
@@ -17,6 +18,12 @@ const SignInForm = () => {
       body: JSON.stringify(signInCredentials)
     })
       .catch(err => console.error(err))
+  }
+
+  const matchCredentials = () => {
+    // if( bad response from login) {
+    //   return <p>*** The username or password you entered is incorrect ***</p>
+    // }
   }
 
   return (
@@ -42,7 +49,14 @@ const SignInForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </section>
-        <button id='login-btn' onClick={postLogin}>Login</button>
+          <button id='login-btn' className='sign-in-form-btn' onClick={postLogin}>Login</button>
+          <NavLink 
+            to='/signup'
+            className='navlink'
+          >
+            Don't have an account? Sign up here!
+          </NavLink>
+        <section className='form-error'></section>
       </form>
     </>
   )
