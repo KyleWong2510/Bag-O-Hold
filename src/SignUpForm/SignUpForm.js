@@ -9,11 +9,24 @@ const SignUpForm = () => {
   const [passwordInput, setPassword] = useState('')
   const [confirmedPasswordInput, setConfirmedPassoword] = useState('')
 
+  const fieldsEmpty = 
+    firstNameInput.trim() === '' ||
+    lastNameInput.trim() === '' ||
+    usernameInput.trim() === '' ||
+    passwordInput.trim() === '' ||
+    confirmedPasswordInput.trim() === ''
+
+  const isEnabled = () => {
+    if (!fieldsEmpty && passwordInput === confirmedPasswordInput) {
+      return true
+    } else return false
+  }
+  
   const postSignUp = () => {
     const url = ''
     const signUpData = {
       username: usernameInput,
-      email: emailInput,
+      email: emailInput || null,
       password: passwordInput,
       first_name: firstNameInput,
       last_name: lastNameInput
@@ -90,7 +103,13 @@ const SignUpForm = () => {
             onChange={(e) => setConfirmedPassoword(e.target.value)}
           />
         </section>
-        <button id='sign-up-btn' onClick={postSignUp}>Sign Up!</button>
+        <button 
+          id='sign-up-btn' 
+          disabled={!isEnabled()}
+          onClick={postSignUp}
+        >
+          Sign Up!
+        </button>
       </form>
     </>
   )
