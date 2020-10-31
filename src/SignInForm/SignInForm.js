@@ -6,6 +6,8 @@ const SignInForm = () => {
   const [usernameInput, setUsername] = useState('')
   const [passwordInput, setPassword] = useState('')
 
+  const isEnabled = usernameInput.trim() === '' || passwordInput.trim() === ''
+
   const postLogin = () => {
     const url = ''
     const signInCredentials = {
@@ -49,7 +51,13 @@ const SignInForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </section>
-          <button id='login-btn' className='sign-in-form-btn' onClick={postLogin}>Login</button>
+          <button 
+            id='login-btn' 
+            onClick={postLogin} 
+            disabled={isEnabled}
+          >
+            Login
+          </button>
           <NavLink 
             to='/signup'
             className='navlink'
