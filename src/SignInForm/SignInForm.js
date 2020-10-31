@@ -22,6 +22,7 @@ const SignInForm = () => {
   return (
     <>
       <form id='sign-in-form'>
+        <h1>Login</h1>
         <section id='username-input-container'>
           <label htmlFor='usernameInput'>Username:</label>
           <input 
@@ -41,7 +42,7 @@ const SignInForm = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </section>
-        <button onClick={postLogin}>Login</button>
+        <button id='login-btn' onClick={postLogin}>Login</button>
       </form>
     </>
   )
