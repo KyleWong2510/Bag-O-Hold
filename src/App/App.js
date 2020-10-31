@@ -7,7 +7,7 @@ import SignUpForm from '../SignUpForm/SignUpForm'
 const App = () => {
 
   
-  return <SignUpForm />
+  return <SignInForm />
 }
 
 export default App;
