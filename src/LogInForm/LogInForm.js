@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import './SignInForm.scss'
+import './LogInForm.scss'
 
-const SignInForm = () => {
+const LogInForm = () => {
   const [usernameInput, setUsername] = useState('')
   const [passwordInput, setPassword] = useState('')
 
@@ -10,14 +10,14 @@ const SignInForm = () => {
 
   const postLogin = () => {
     const url = ''
-    const signInCredentials = {
+    const logInCredentials = {
       username: usernameInput,
       password: passwordInput
     }
     return fetch(url, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(signInCredentials)
+      body: JSON.stringify(logInCredentials)
     })
       .catch(err => console.error(err))
   }
@@ -30,9 +30,9 @@ const SignInForm = () => {
 
   return (
     <>
-      <form id='sign-in-form'>
-        <h1>Login</h1>
-        <section className='sign-in-form-fields'>
+      <form id='log-in-form'>
+        <h1>Log In</h1>
+        <section className='log-in-form-fields'>
           <label htmlFor='usernameInput'>Username:</label>
           <input 
             id='usernameInput'
@@ -42,7 +42,7 @@ const SignInForm = () => {
             onChange={(e) => setUsername(e.target.value)}
           />
         </section>
-        <section className='sign-in-form-fields'>
+        <section className='log-in-form-fields'>
           <label htmlFor='passwordInput'>Password:</label>
           <input id='passwordInput'
             type='password'
@@ -70,4 +70,4 @@ const SignInForm = () => {
   )
 }
 
-export default SignInForm
+export default LogInForm

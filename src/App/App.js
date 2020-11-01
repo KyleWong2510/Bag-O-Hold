@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom'
 import './App.scss';
 import CreateCharacterForm from '../CreateCharacterForm/CreateCharacterForm'
-import SignInForm from '../SignInForm/SignInForm'
+import LogInForm from '../LogInForm/LogInForm'
 import SignUpForm from '../SignUpForm/SignUpForm'
 
 const App = () => {
@@ -11,8 +11,8 @@ const App = () => {
       {/* <Route path='/'>
         <Home />
       </Route> */}
-      <Route path='/signin'>
-        <SignInForm />
+      <Route path='/login'>
+        <LogInForm />
       </Route>
       <Route path='/signup'>
         <SignUpForm />
