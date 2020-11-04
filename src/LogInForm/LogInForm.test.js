@@ -1,10 +1,10 @@
 import React from 'react';
 import LogInForm from './LogInForm';
 import '@testing-library/jest-dom/extend-expect';
-import { render, fireEvent, getByDisplayValue } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 
-describe('Log In Form', () => {
+describe('LogInForm', () => {
   it('should render a header, inputs, a button, and a navlink', () => {
     const { getByText, getByPlaceholderText, getByRole } = render(<BrowserRouter><LogInForm /></BrowserRouter>);
     const header = getByText('Log In');
@@ -28,12 +28,12 @@ describe('Log In Form', () => {
     const { getByPlaceholderText, getByDisplayValue } = render(<BrowserRouter><LogInForm /></BrowserRouter>);
     const nameInput = getByPlaceholderText('Username...');
     const passwordInput = getByPlaceholderText('Password...');
-    fireEvent.change(nameInput, { target: { value: 'Test Name'}})
-    fireEvent.change(passwordInput, { target: { value: 'Password'}})
-    const newName = getByDisplayValue('Test Name')
-    const passwordName = getByDisplayValue('Password')
-    expect(newName).toBeInTheDocument()
-    expect(passwordName).toBeInTheDocument()
+    fireEvent.change(nameInput, { target: { value: 'Test Name' }});
+    fireEvent.change(passwordInput, { target: { value: 'Password' }});
+    const newName = getByDisplayValue('Test Name');
+    const passwordName = getByDisplayValue('Password');
+    expect(newName).toBeInTheDocument();
+    expect(passwordName).toBeInTheDocument();
   })
 
   //button fire event on click
