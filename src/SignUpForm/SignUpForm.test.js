@@ -60,4 +60,7 @@ describe('SignUpForm', () => {
     expect(newPasswordInput).toBeInTheDocument();
     expect(newConfirmPasswordInput).toBeInTheDocument();
   });
+
+  //button fire event on click
+
 })
