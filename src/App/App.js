@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom'
 import './App.scss';
 import CreateCharacterForm from '../CreateCharacterForm/CreateCharacterForm'
+import Layout from '../Layout/Layout'
 import LogInForm from '../LogInForm/LogInForm'
 import SignUpForm from '../SignUpForm/SignUpForm'
 
@@ -12,10 +13,14 @@ const App = () => {
         <Home />
       </Route> */}
       <Route path='/login'>
-        <LogInForm />
+        <Layout 
+          content={<LogInForm />}
+        />
       </Route>
       <Route path='/signup'>
-        <SignUpForm />
+        <Layout 
+          content={<SignUpForm />}
+        />
       </Route>
     </main>
   )
