@@ -18,7 +18,9 @@ const App = () => {
         />
       </Route>
       <Route path='/signup'>
-        <SignUpForm />
+        <Layout 
+          content={<SignUpForm />}
+        />
       </Route>
     </main>
   )
